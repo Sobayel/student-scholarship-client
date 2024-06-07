@@ -10,7 +10,7 @@ const SignUp = () => {
     const navigate = useNavigate()
     const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
-    const { signInWithGoogle, createUser, updateUserProfile } = useAuth()
+    const { googleSignIn, createUser, updateUserProfile } = useAuth()
     const [registerError, setRegisterError] = useState('');
 
     const handleSignUp = (data) => {
@@ -48,7 +48,7 @@ const SignUp = () => {
 
     // Google Login
     const handleGoogleSignIn = () =>{
-        signInWithGoogle()
+        googleSignIn()
         .then(result => {
             console.log(result.user)
             const userInfo ={

@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import logo from "../../assets/logo.png"
 import { AiOutlineMenu } from "react-icons/ai";
@@ -9,7 +9,6 @@ import avatarImg from '../../assets/home/placeholder.jpg'
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  console.log(user)
   const [isOpen, setIsOpen] = useState(false)
 
 
@@ -39,7 +38,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img className="h-6 w-8 md:h-10 md:w-14 rounded-xl" src={logo} alt="" />
-        <Link to='/' className="btn btn-ghost md:text-xl">Student Scholarship</Link>
+        <NavLink to='/' className="btn btn-ghost md:text-xl">Student Scholarship</NavLink>
 
       </div>
       <div className="navbar-center hidden lg:flex">

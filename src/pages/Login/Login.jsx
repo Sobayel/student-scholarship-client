@@ -1,16 +1,16 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png"
 import { useForm } from "react-hook-form";
-import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const axiosPublic = useAxiosPublic();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { signIn, signInWithGoogle } = useAuth()
+    const { signIn, googleSignIn } = useAuth()
 
     const handleSignIn = (data) => {
         const { email, password } = data;
@@ -39,9 +39,8 @@ const Login = () => {
     }
 
     const handleGoogleSignIn = () =>{
-        signInWithGoogle()
+        googleSignIn()
         .then(result => {
-            console.log(result.user)
             const userInfo ={
                 email: result.user?.email,
                 name: result.user?.displayName

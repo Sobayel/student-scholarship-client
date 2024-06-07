@@ -6,6 +6,8 @@ import Home from "../pages/Home/Home/Home";
 import Error from "../pages/Error/Error";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
+import ScholarshipDetails from "../pages/Home/TopScholarship/ScholarshipDetails";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -16,6 +18,12 @@ export const router = createBrowserRouter([
         {
           path: '/',
           element: <Home />,
+        },
+        {
+          path: '/scholarshipDetails/:id',
+          element: <PrivateRoute>
+            <ScholarshipDetails></ScholarshipDetails>
+          </PrivateRoute>,
         },
     ]
     },
