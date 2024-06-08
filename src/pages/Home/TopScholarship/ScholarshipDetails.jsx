@@ -2,11 +2,18 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useParams } from "react-router-dom";
 import LoadingSpinner from "../../../Shared/LoadingSpinner";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
+import useAuth from "../../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 const ScholarshipDetails = () => {
-    const {id} = useParams();
-    
+    const { user } = useAuth()
+    const { id } = useParams();
+    const [startDate, setStartDate] = useState(new Date())
+
     const axiosSecure = useAxiosSecure();
     const { data: scholarship = [], isLoading } = useQuery({
         queryKey: ['scholarship'],
@@ -14,31 +21,109 @@ const ScholarshipDetails = () => {
             const res = await axiosSecure.get(`/scholarship/${id}`);
             return res.data;
         }
-        
+
     })
+
+    const handleReview = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const image = form.image.value;
+        const date = form.date.value;
+        const rating = form.rating.value;
+        const comment = form.comment.value;
+        const reviewForm = { name, rating, date, comment, image };
+        console.log(reviewForm)
+        fetch('http://localhost:9000/review', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(reviewForm)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    toast.success('Review Successfully')
+                }
+            })
+    }
     if (isLoading) return <LoadingSpinner />
     return (
-            <div className="max-w-3xl overflow-hidden mb-10 justify-center mx-auto bg-slate-200 rounded-lg dark:bg-gray-800">
-    <img className="object-cover w-full h-80" src={scholarship.UniversityImage} alt="Article" />
+        <div className="max-w-3xl overflow-hidden mb-10 justify-center mx-auto bg-white rounded-lg dark:bg-gray-800">
+            <img className="object-cover w-full h-80" src={scholarship.universityImage} alt="Article" />
 
-    <div className="p-6">
-        <div>
-            <span className="text-sm font-medium text-blue-600 uppercase dark:text-blue-400">Subject Name:  {scholarship.SubjectName}</span>
-            <p  className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline">{scholarship.UniversityName}</p>
-            <p className="mt-2 text-md text-gray-600 dark:text-gray-400">Scholarship Description: {scholarship.ScholarshipDescription}</p>
+            <div className="p-6">
+                <div>
+                    <span className="text-sm font-medium text-blue-600 uppercase dark:text-blue-400">Subject Name:  {scholarship.subjectName}</span>
+                    <p className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform dark:text-white hover:text-gray-600 hover:underline">{scholarship.universityName}</p>
+                    <p className="mt-2 text-md text-gray-600 dark:text-gray-400">Scholarship Description: {scholarship.scholarshipDescription}</p>
+                </div>
+                <div>
+                    <p className="px-2 text-lg font-semibold text-gray-700 dark:text-gray-400">Scholarship Category:  {scholarship.scholarshipCategory}</p>
+                    
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Subject Name: {scholarship.subjectName}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationDeadline: {scholarship.applicationDeadline}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">UniversityLocation:  {scholarship?.universityLocation?.country},{scholarship?.universityLocation?.city}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationFees: {scholarship.applicationFees}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Post Date: {scholarship.postDate}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Stipend: {scholarship.stipend}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Service Charge: {scholarship.serviceCharge}</p>
+                </div>
+            </div>
+            <div>
+                <button className="btn mx-6 mb-4 btn-outline">Apply Scholarship</button>
+            </div>
+            {/* review section */}
+            <form onSubmit={handleReview} className="px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                    <div>
+                        <label className="text-slate-700 font-semibold"
+                            htmlFor="name">
+                            Reviewer name
+                        </label>
+                        <input type="text" value={user?.displayName || 'user not available'} name="name" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" />
+                    </div>
+                    <div>
+                        <label className="text-slate-700 font-semibold"
+                            htmlFor="image">
+                            Reviewer image
+                        </label>
+                        <input type="text" value={user?.photoURL || 'user not available'} name="image" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" />
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+                    <div className="flex flex-col">
+                        <label className="text-slate-700 font-semibold"
+                            htmlFor="date">
+                            Review date
+                        </label>
+                        <ReactDatePicker name="date"
+                                className='border p-2 rounded-md'
+                                selected={startDate}
+                                onChange={date => setStartDate(date)}
+                            />
+                    </div>
+                    <div>
+                        <label className="text-slate-700 font-semibold"
+                            htmlFor="rating">
+                            Rating point
+                        </label>
+                        <input type="text" placeholder="Rating point" name="rating" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
+                    </div>
+                </div>
+                <div className="mt-3">
+                        <label className="text-slate-700 font-semibold"
+                            htmlFor="comment">
+                            Reviewer Comments
+                        </label>
+                        <textarea type="text" placeholder="Reviewer Comments" name="comment" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
+                    </div>
+                    <div className="mt-4">
+                <input type="submit" value="Confirm Review" className="btn btn-outline"/>
+            </div>
+            </form>
         </div>
-        <p className="px-2 text-lg font-semibold text-gray-700 dark:text-gray-400">Scholarship Category:  {scholarship.ScholarshipCategory}</p>
-            <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationDeadline: {scholarship.ApplicationDeadline}</p>
-            <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">UniversityLocation:  {scholarship?.UniversityLocation?.Country},{scholarship?.UniversityLocation?.City}</p>
-            <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationFees: {scholarship.ApplicationFees}</p>
-            <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Post Date: {scholarship.PostDate}</p>
-            <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Stipend: {scholarship.Stipend}</p>
-            <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Service Charge: {scholarship.ServiceCharge}</p>
-        <div className="mt-4">
-        <button className="btn mx-6 mb-4 btn-outline">Apply Scholarship</button>
-        </div>
-    </div>
-</div>
     );
 };
 

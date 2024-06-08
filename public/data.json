@@ -1,111 +1,111 @@
 [
     {
-      "UniversityName": "Harvard University",
-      "UniversityImage": " https://i.ibb.co/CQ8BrX0/Harvard-University.jpg ",
-      "ScholarshipCategory": "Undergraduate Scholarship",
-      "UniversityLocation": {
-        "Country": "USA",
-        "City": "Cambridge, MA"
+      "universityName": "Harvard University",
+      "universityImage": " https://i.ibb.co/CQ8BrX0/Harvard-University.jpg ",
+      "scholarshipCategory": "Undergraduate Scholarship",
+      "universityLocation": {
+        "country": "USA",
+        "city": "Cambridge, MA"
       },
-      "ApplicationDeadline": "2024-12-01",
-      "SubjectCategory": "Various",
-      "ApplicationFees": "$75",
-      "Rating": 4.9,
-      "SubjectName": "Various",
-      "ScholarshipDescription": "The Harvard Financial Aid Initiative offers scholarships to students from low-income backgrounds, covering full tuition and additional expenses.",
-      "Stipend": "$10,000 per annum",
-      "PostDate": "2024-05-01",
-      "ServiceCharge": "No service charge"
+      "applicationDeadline": "2024-12-01",
+      "subjectCategory": "Various",
+      "applicationFees": "$75",
+      "rating": 4.9,
+      "subjectName": "Various",
+      "scholarshipDescription": "The Harvard Financial Aid Initiative offers scholarships to students from low-income backgrounds, covering full tuition and additional expenses.",
+      "stipend": "$10,000 per annum",
+      "postDate": "2024-05-01",
+      "serviceCharge": "No service charge"
     },
     {
-      "UniversityName": "University of Oxford",
-      "UniversityImage": " https://i.ibb.co/GsHH6xH/University-of-Oxford.jpg ",
-      "ScholarshipCategory": "Graduate Scholarship",
-      "UniversityLocation": {
-        "Country": "UK",
-        "City": "Oxford"
+      "universityName": "University of Oxford",
+      "universityImage": " https://i.ibb.co/GsHH6xH/University-of-Oxford.jpg ",
+      "scholarshipCategory": "Graduate Scholarship",
+      "universityLocation": {
+        "country": "UK",
+        "city": "Oxford"
       },
-      "ApplicationDeadline": "2024-01-10",
-      "SubjectCategory": "Humanities",
-      "ApplicationFees": "£75",
-      "Rating": 4.8,
-      "SubjectName": "History",
-      "ScholarshipDescription": "The Clarendon Fund offers fully funded scholarships for outstanding graduate students, covering tuition fees and a generous living stipend.",
-      "Stipend": "£15,000 per annum",
-      "PostDate": "2024-06-01",
-      "ServiceCharge": "No service charge"
+      "applicationDeadline": "2024-01-10",
+      "subjectCategory": "Humanities",
+      "applicationFees": "£75",
+      "rating": 4.8,
+      "subjectName": "History",
+      "scholarshipDescription": "The Clarendon Fund offers fully funded scholarships for outstanding graduate students, covering tuition fees and a generous living stipend.",
+      "stipend": "£15,000 per annum",
+      "postDate": "2024-06-01",
+      "serviceCharge": "No service charge"
     },
     {
-      "UniversityName": "Stanford University",
-      "UniversityImage": " https://i.ibb.co/g49cdpD/Stanford-University.jpg ",
-      "ScholarshipCategory": "PhD Scholarship",
-      "UniversityLocation": {
-        "Country": "USA",
-        "City": "Stanford, CA"
+      "universityName": "Stanford University",
+      "universityImage": " https://i.ibb.co/g49cdpD/Stanford-University.jpg ",
+      "scholarshipCategory": "PhD Scholarship",
+      "universityLocation": {
+        "country": "USA",
+        "city": "Stanford, CA"
       },
-      "ApplicationDeadline": "2024-11-30",
-      "SubjectCategory": "Engineering",
-      "ApplicationFees": "$125",
-      "Rating": 4.7,
-      "SubjectName": "Computer Science",
-      "ScholarshipDescription": "The Knight-Hennessy Scholars program offers full funding for PhD students, including tuition, stipend, and additional benefits.",
-      "Stipend": "$32,000 per annum",
-      "PostDate": "2024-05-20",
-      "ServiceCharge": "No service charge"
+      "applicationDeadline": "2024-11-30",
+      "subjectCategory": "Engineering",
+      "applicationFees": "$125",
+      "rating": 4.7,
+      "subjectName": "Computer Science",
+      "scholarshipDescription": "The Knight-Hennessy Scholars program offers full funding for PhD students, including tuition, stipend, and additional benefits.",
+      "stipend": "$32,000 per annum",
+      "postDate": "2024-05-20",
+      "serviceCharge": "No service charge"
     },
     {
-      "UniversityName": "University of Melbourne",
-      "UniversityImage": " https://i.ibb.co/j4YnsrF/University-of-Melbourne.jpg ",
-      "ScholarshipCategory": "Master's Scholarship",
-      "UniversityLocation": {
-        "Country": "Australia",
-        "City": "Melbourne"
+      "universityName": "University of Melbourne",
+      "universityImage": " https://i.ibb.co/j4YnsrF/University-of-Melbourne.jpg ",
+      "scholarshipCategory": "Master's Scholarship",
+      "universityLocation": {
+        "country": "Australia",
+        "city": "Melbourne"
       },
-      "ApplicationDeadline": "2024-10-31",
-      "SubjectCategory": "Sciences",
-      "ApplicationFees": "AUD 100",
-      "Rating": 4.6,
-      "SubjectName": "Environmental Science",
-      "ScholarshipDescription": "The Melbourne International Graduate Research Scholarships cover full tuition and provide a stipend for international students.",
-      "Stipend": "AUD 30,000 per annum",
-      "PostDate": "2024-04-15",
-      "ServiceCharge": "AUD 50"
+      "applicationDeadline": "2024-10-31",
+      "subjectCategory": "Sciences",
+      "applicationFees": "AUD 100",
+      "rating": 4.6,
+      "subjectName": "Environmental Science",
+      "scholarshipDescription": "The Melbourne International Graduate Research Scholarships cover full tuition and provide a stipend for international students.",
+      "stipend": "AUD 30,000 per annum",
+      "postDate": "2024-04-15",
+      "serviceCharge": "AUD 50"
     },
     {
-      "UniversityName": "National University of Singapore",
-      "UniversityImage": " https://i.ibb.co/vXD6W2S/National-University-of-Singapore.jpg ",
-      "ScholarshipCategory": "Undergraduate Scholarship",
-      "UniversityLocation": {
-        "Country": "Singapore",
-        "City": "Singapore"
+      "universityName": "National University of Singapore",
+      "universityImage": " https://i.ibb.co/vXD6W2S/National-University-of-Singapore.jpg ",
+      "scholarshipCategory": "Undergraduate Scholarship",
+      "universityLocation": {
+        "country": "Singapore",
+        "city": "Singapore"
       },
-      "ApplicationDeadline": "2024-09-15",
-      "SubjectCategory": "Engineering",
-      "ApplicationFees": "SGD 50",
-      "Rating": 4.5,
-      "SubjectName": "Mechanical Engineering",
-      "ScholarshipDescription": "The NUS Global Merit Scholarship offers full tuition and a stipend to outstanding students pursuing undergraduate studies.",
-      "Stipend": "SGD 15,000 per annum",
-      "PostDate": "2024-03-10",
-      "ServiceCharge": "No service charge"
+      "applicationDeadline": "2024-09-15",
+      "subjectCategory": "Engineering",
+      "applicationFees": "SGD 50",
+      "rating": 4.5,
+      "subjectName": "Mechanical Engineering",
+      "scholarshipDescription": "The NUS Global Merit Scholarship offers full tuition and a stipend to outstanding students pursuing undergraduate studies.",
+      "stipend": "SGD 15,000 per annum",
+      "postDate": "2024-03-10",
+      "serviceCharge": "No service charge"
     },
     {
-      "UniversityName": "ETH Zurich",
-      "UniversityImage": " https://i.ibb.co/X2Y3Nwd/ETH-Zurich.jpg ",
-      "ScholarshipCategory": "Master's Scholarship",
-      "UniversityLocation": {
-        "Country": "Switzerland",
-        "City": "Zurich"
+      "universityName": "ETH Zurich",
+      "universityImage": " https://i.ibb.co/X2Y3Nwd/ETH-Zurich.jpg ",
+      "scholarshipCategory": "Master's Scholarship",
+      "universityLocation": {
+        "country": "Switzerland",
+        "city": "Zurich"
       },
-      "ApplicationDeadline": "2024-07-31",
-      "SubjectCategory": "Sciences",
-      "ApplicationFees": "CHF 150",
-      "Rating": 4.7,
-      "SubjectName": "Physics",
-      "ScholarshipDescription": "The ETH Zurich Excellence Scholarship provides full tuition coverage and a living stipend for outstanding Master's students.",
-      "Stipend": "CHF 20,000 per annum",
-      "PostDate": "2024-02-01",
-      "ServiceCharge": "CHF 50"
+      "applicationDeadline": "2024-07-31",
+      "subjectCategory": "Sciences",
+      "applicationFees": "CHF 150",
+      "rating": 4.7,
+      "subjectName": "Physics",
+      "scholarshipDescription": "The ETH Zurich Excellence Scholarship provides full tuition coverage and a living stipend for outstanding Master's students.",
+      "stipend": "CHF 20,000 per annum",
+      "postDate": "2024-02-01",
+      "serviceCharge": "CHF 50"
     }
   ]
   

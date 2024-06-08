@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import ScholarshipDetails from "../pages/Home/TopScholarship/ScholarshipDetails";
 import PrivateRoute from "./PrivateRoute";
+import AllScholarship from "../pages/AllScholarship/AllScholarship";
 
 export const router = createBrowserRouter([
     {
@@ -24,6 +25,11 @@ export const router = createBrowserRouter([
           element: <PrivateRoute>
             <ScholarshipDetails></ScholarshipDetails>
           </PrivateRoute>,
+        },
+        {
+          path: '/allScholarship',
+          element: <AllScholarship></AllScholarship>,
+          loader: () => fetch('http://localhost:9000/scholarshipCount')
         },
     ]
     },

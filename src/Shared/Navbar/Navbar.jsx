@@ -9,6 +9,7 @@ import avatarImg from '../../assets/home/placeholder.jpg'
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
+  console.log(user)
   const [isOpen, setIsOpen] = useState(false)
 
 
@@ -17,7 +18,7 @@ const Navbar = () => {
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to='/assignment'>All Scholarship</Link>
+              <Link to='/allScholarship'>All Scholarship</Link>
             </li>
             <li>
               <Link to="/createAssignment">User Dashboard</Link>
