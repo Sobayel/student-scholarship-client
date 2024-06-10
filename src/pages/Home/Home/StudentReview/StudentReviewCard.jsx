@@ -2,7 +2,7 @@
 
 const StudentReviewCard = ({item}) => {
     const {image, comment, name, date, rating} = item || {}
-    console.log(item)
+    
     return (
         <div className="w-full max-w-md px-4 py-4 mt-16 bg-slate-200 rounded-lg shadow-lg dark:bg-gray-800">
     <div className="flex justify-center -mt-16 md:justify-end">

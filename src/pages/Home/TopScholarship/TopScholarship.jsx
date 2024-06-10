@@ -3,8 +3,7 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import TopScholarshipCard from "./TopScholarshipCard";
 import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 
 const TopScholarship = () => {
     const axiosPublic = useAxiosPublic();

@@ -19,7 +19,6 @@ const StudentReview = () => {
         }
     });
 
-    console.log(review);
     if (isLoading) return <LoadingSpinner />;
     if (!Array.isArray(review)) {
         return <div>Error loading review.</div>;

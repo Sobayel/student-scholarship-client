@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -72,7 +72,7 @@ const ScholarshipDetails = () => {
                 </div>
             </div>
             <div>
-                <button className="btn mx-6 mb-4 btn-outline">Apply Scholarship</button>
+                <Link to='/applyScholarshipForm' className="btn mx-6 mb-4 btn-outline">Apply Scholarship</Link>
             </div>
             {/* review section */}
             <form onSubmit={handleReview} className="px-6">
