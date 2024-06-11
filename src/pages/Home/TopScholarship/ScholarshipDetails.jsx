@@ -7,15 +7,18 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import toast from "react-hot-toast";
+import Payment from "./Payment";
+import Button from "../../../Shared/Button";
 
 
 const ScholarshipDetails = () => {
     const { user } = useAuth()
+    const [isOpen, setIsOpen] = useState(false)
     const { id } = useParams();
     const [startDate, setStartDate] = useState(new Date())
 
     const axiosSecure = useAxiosSecure();
-    const { data: scholarship = [], isLoading } = useQuery({
+    const { data: scholarship = [], isLoading, refetch } = useQuery({
         queryKey: ['scholarship'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/scholarship/${id}`);
@@ -48,6 +51,11 @@ const ScholarshipDetails = () => {
                 }
             })
     }
+
+    const closeModal = () =>{
+        setIsOpen(false)
+      }
+
     if (isLoading) return <LoadingSpinner />
     return (
         <div className="max-w-3xl overflow-hidden mb-10 justify-center mx-auto bg-white rounded-lg dark:bg-gray-800">
@@ -71,9 +79,25 @@ const ScholarshipDetails = () => {
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Service Charge: {scholarship.serviceCharge}</p>
                 </div>
             </div>
-            <div>
-                <Link to='/applyScholarshipForm' className="btn mx-6 mb-4 btn-outline">Apply Scholarship</Link>
-            </div>
+            <div className='p-4'>
+      <Button
+          onClick={() => setIsOpen(true)}
+          label='Apply Scholarship'
+        />
+      </div>
+      {/* Modal */}
+      <Payment 
+      isOpen={isOpen}
+      closeModal={closeModal}
+      refetch={refetch}
+      appliedInfo={{
+        normalUser: {
+          name: user?.displayName,
+          email: user?.email,
+          id: user?._id,
+        },
+      }}
+      ></Payment>
             {/* review section */}
             <form onSubmit={handleReview} className="px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
