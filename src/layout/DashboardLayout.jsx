@@ -20,7 +20,6 @@ const Dashboard = () => {
     const [isUser] = useUser()
     const { logOut, user, loading } = useAuth()
     const navigate = useNavigate()
-    console.log('user is:', isUser)
 
 
     useEffect(() => {
@@ -50,7 +49,7 @@ const Dashboard = () => {
 
     return (
         <div className="flex justify-between">
-            <div className="hidden lg:block w-64 lg:min-h-screen bg-gradient-to-l from-[#3158ef] to-[#b765e7]">
+            <div className="hidden lg:block w-64 lg:min-h-screen bg-gradient-to-l from-[#31ef4a] to-[#b765e7]">
                 <div className="flex flex-col items-center mt-4">
                     <img src={logo} className="w-[40px] rounded-sm" />
                     <h1 className="text-xl font-extrabold">Student <span className="text-white">Scholarship</span></h1>
@@ -79,6 +78,9 @@ const Dashboard = () => {
                         <>
                             <li>
                                 <NavLink to='/dashboard/profile'><FaHome></FaHome> My Profile</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/review'><FaHome></FaHome> My Review</NavLink>
                             </li>
                         </>
                     }
@@ -123,6 +125,9 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/userProfile'><FaHome></FaHome> My Profile</NavLink>
                                     </li>
+                                    <li>
+                                <NavLink to='/dashboard/review'><FaHome></FaHome> My Review</NavLink>
+                            </li>
                                 </>
                             }
 

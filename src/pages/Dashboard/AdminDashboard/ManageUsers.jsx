@@ -1,7 +1,5 @@
-
-
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUsers } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
@@ -17,25 +15,31 @@ const ManageUsers = () => {
     })
 
 
-    const handleMakeAdmin = user =>{
-        axiosSecure.patch(`/users/admin/${user._id}`)
-        .then(res => {
-            console.log(res.data)
-            if(res.data.modifiedCount > 0){
-                refetch()
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: `${user.name} is an Admin Now!`,
-                    showConfirmButton: false,
-                    timer: 1500
-                  });
-            }
-        })
+    const handleMake = async (user, role) => {
+        console.log(user)
+        try {
+            axiosSecure.patch(`/users/${user._id}`, { role })
+                .then(res => {
+                    console.log(res.data)
+                    if (res.data.modifiedCount > 0) {
+                        refetch()
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: `${user.name} is an Admin Now!`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    }
+                })
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
 
-    const handleDelete = user =>{
+    const handleDelete = user => {
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -85,9 +89,10 @@ const ManageUsers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    { user.role === 'admin'? 'Admin' : <button
-                                        onClick={() => handleMakeAdmin(user)}
-                                        className="btn btn-lg bg-orange-600"><FaUsers className="text-white text-2xl"></FaUsers></button>}
+                                    <select onChange={(e) => handleMake(user, e.target.value)} className="select select-info w-full max-w-xs">
+                                        <option selected={user.role === "admin"} value="admin">Admin</option>
+                                        <option selected={user.role === "moderator"} value="moderator">Moderator</option>
+                                    </select>
                                 </td>
                                 <td>
                                     <button
