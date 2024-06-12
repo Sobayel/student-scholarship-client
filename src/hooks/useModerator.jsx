@@ -8,15 +8,15 @@ const useModerator = () => {
     const { user} = useAuth()
     const axios = useAxiosSecure()
    
-    const { data: isCreator, isPending: isCreatorLoading } = useQuery({
-        queryKey: [user?.email, 'isCreator'],
+    const { data: isModerator, isPending: isModeratorLoading } = useQuery({
+        queryKey: [user?.email, 'isModerator'],
         queryFn: async () => {
-            const res = await axios.get(`/users/creator/${user?.email}`)
+            const res = await axios.get(`/users/moderator/${user?.email}`)
             console.log(res.data)
-            return res.data?.creator
+            return res.data?.moderator
         }
     })
-    return [isCreator, isCreatorLoading]
+    return [isModerator, isModeratorLoading]
 };
 
 

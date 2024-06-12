@@ -91,6 +91,8 @@ const ScholarshipDetails = () => {
       closeModal={closeModal}
       refetch={refetch}
       appliedInfo={{
+        ...scholarship,
+        price:scholarship.applicationFees,
         normalUser: {
           name: user?.displayName,
           email: user?.email,
