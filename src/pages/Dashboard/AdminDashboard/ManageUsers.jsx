@@ -90,6 +90,7 @@ const ManageUsers = () => {
                                 <td>{user.email}</td>
                                 <td>
                                     <select onChange={(e) => handleMake(user, e.target.value)} className="select select-info w-full max-w-xs">
+                                        <option selected={user.role === "user"} value="user">Users</option>
                                         <option selected={user.role === "admin"} value="admin">Admin</option>
                                         <option selected={user.role === "moderator"} value="moderator">Moderator</option>
                                     </select>

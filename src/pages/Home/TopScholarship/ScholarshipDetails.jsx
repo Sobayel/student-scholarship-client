@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -69,7 +69,6 @@ const ScholarshipDetails = () => {
                 </div>
                 <div>
                     <p className="px-2 text-lg font-semibold text-gray-700 dark:text-gray-400">Scholarship Category:  {scholarship.scholarshipCategory}</p>
-                    
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Subject Name: {scholarship.subjectName}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationDeadline: {scholarship.applicationDeadline}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">UniversityLocation:  {scholarship?.universityLocation?.country},{scholarship?.universityLocation?.city}</p>
@@ -92,6 +91,7 @@ const ScholarshipDetails = () => {
       refetch={refetch}
       appliedInfo={{
         ...scholarship,
+        _id:scholarship._id,
         price:scholarship.applicationFees,
         normalUser: {
           name: user?.displayName,

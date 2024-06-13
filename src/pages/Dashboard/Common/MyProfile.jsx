@@ -1,8 +1,8 @@
-import LoadingSpinner from '../../Shared/LoadingSpinner'
-import useAdmin from '../../hooks/useAdmin'
-import useAuth from '../../hooks/useAuth'
-import useModerator from '../../hooks/useModerator'
-import useUser from '../../hooks/useUser'
+import LoadingSpinner from '../../../Shared/LoadingSpinner'
+import useAdmin from '../../../hooks/useAdmin'
+import useAuth from '../../../hooks/useAuth'
+import useModerator from '../../../hooks/useModerator'
+import useUser from '../../../hooks/useUser'
 
 const MyProfile = () => {
   const { user, loading } = useAuth()

@@ -11,10 +11,11 @@ import PrivateRoute from "./PrivateRoute";
 import AllScholarship from "../pages/AllScholarship/AllScholarship";
 import ApplyScholarshipForm from "../pages/Home/TopScholarship/ApplyScholarshipForm";
 import DashboardLayout from "../layout/DashboardLayout";
-import MyProfile from "../pages/Dashboard/MyProfile";
+import MyProfile from "../pages/Dashboard/Common/MyProfile";
 import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
 import StudentReview from "../pages/Home/Home/StudentReview/StudentReview";
 import MyReview from "../pages/Dashboard/UserDashboard/MyReview";
+import AddScholarship from "../pages/Dashboard/ModeratorDashboard/AddScholarship";
 
 export const router = createBrowserRouter([
     {
@@ -54,12 +55,17 @@ export const router = createBrowserRouter([
         element:<MyProfile></MyProfile>
       },
       {
+        path:'review',
+        element:<MyReview></MyReview>
+      },
+      // admin
+      {
         path:'manageUsers',
         element:<ManageUsers></ManageUsers>
       },
       {
-        path:'review',
-        element:<MyReview></MyReview>
+        path:'addScholarship',
+        element:<AddScholarship></AddScholarship>
       },
     ],
   }

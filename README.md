@@ -1,8 +1,57 @@
-# React + Vite
+# Assignment12_category_0021
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Student Scholarship
 
-Currently, two official plugins are available:
+github client link: https://github.com/programming-hero-web-course1/b9a12-client-side-Sobayel
+github server link: https://github.com/programming-hero-web-course1/b9a12-server-side-Sobayel
+live link: https://assignment-ss-e02b6.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Assignment Category/variant:
+2. Admin email:mdsobayelhossain@gmail.com
+3. Admin password:1!Aaaa
+4. Moderator email:sohanmia2230@gmail.com
+5. Moderator password:1!Aaaa
+6. Front-end Live Site Link:
+7. Client Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-client-side-Sobayel
+8. Server Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-server-side-Sobayel
+
+## Website Page Name:
+- Home
+- Admin Dashboard
+- Moderator Dashboard
+- Users Dashboard
+- All Scholarship
+- My Profile
+- Nav ber 
+- Banner
+- Login
+- Register
+- 404 Page
+- Review
+- Manage Users
+- Footer
+
+
+## NPM Package:
+- firebase
+- react
+- react dom
+- react hot toast
+- react icons
+- react router dom
+- swi per
+- tailwind css
+- daisy ui
+- sweet alert 2
+- meraki ui
+- react-tabs
+- date-fns
+- eslint-plugin-react
+- vite
+- react-date picker
+- axios
+- sweetalert2
+- react-hook-form
+- react-toastify
+
+

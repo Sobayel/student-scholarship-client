@@ -3,10 +3,8 @@
       "universityName": "Harvard University",
       "universityImage": " https://i.ibb.co/CQ8BrX0/Harvard-University.jpg ",
       "scholarshipCategory": "Undergraduate Scholarship",
-      "universityLocation": {
-        "country": "USA",
-        "city": "Cambridge, MA"
-      },
+      "country": "USA",
+      "city": "Cambridge, MA",
       "applicationDeadline": "2024-12-01",
       "subjectCategory": "Various",
       "applicationFees": "$75",
@@ -21,13 +19,11 @@
       "universityName": "University of Oxford",
       "universityImage": " https://i.ibb.co/GsHH6xH/University-of-Oxford.jpg ",
       "scholarshipCategory": "Graduate Scholarship",
-      "universityLocation": {
-        "country": "UK",
-        "city": "Oxford"
-      },
+      "country": "UK",
+      "city": "Oxford",
       "applicationDeadline": "2024-01-10",
       "subjectCategory": "Humanities",
-      "applicationFees": "£75",
+      "applicationFees": "$75",
       "rating": 4.8,
       "subjectName": "History",
       "scholarshipDescription": "The Clarendon Fund offers fully funded scholarships for outstanding graduate students, covering tuition fees and a generous living stipend.",
@@ -39,10 +35,8 @@
       "universityName": "Stanford University",
       "universityImage": " https://i.ibb.co/g49cdpD/Stanford-University.jpg ",
       "scholarshipCategory": "PhD Scholarship",
-      "universityLocation": {
-        "country": "USA",
-        "city": "Stanford, CA"
-      },
+      "country": "USA",
+      "city": "Stanford, CA",
       "applicationDeadline": "2024-11-30",
       "subjectCategory": "Engineering",
       "applicationFees": "$125",
@@ -57,31 +51,27 @@
       "universityName": "University of Melbourne",
       "universityImage": " https://i.ibb.co/j4YnsrF/University-of-Melbourne.jpg ",
       "scholarshipCategory": "Master's Scholarship",
-      "universityLocation": {
-        "country": "Australia",
-        "city": "Melbourne"
-      },
+      "country": "Australia",
+      "city": "Melbourne",
       "applicationDeadline": "2024-10-31",
       "subjectCategory": "Sciences",
-      "applicationFees": "AUD 100",
+      "applicationFees": "$100",
       "rating": 4.6,
       "subjectName": "Environmental Science",
       "scholarshipDescription": "The Melbourne International Graduate Research Scholarships cover full tuition and provide a stipend for international students.",
       "stipend": "AUD 30,000 per annum",
       "postDate": "2024-04-15",
-      "serviceCharge": "AUD 50"
+      "serviceCharge": "$50"
     },
     {
       "universityName": "National University of Singapore",
       "universityImage": " https://i.ibb.co/vXD6W2S/National-University-of-Singapore.jpg ",
       "scholarshipCategory": "Undergraduate Scholarship",
-      "universityLocation": {
-        "country": "Singapore",
-        "city": "Singapore"
-      },
+      "country": "Singapore",
+      "city": "Singapore",
       "applicationDeadline": "2024-09-15",
       "subjectCategory": "Engineering",
-      "applicationFees": "SGD 50",
+      "applicationFees": "$50",
       "rating": 4.5,
       "subjectName": "Mechanical Engineering",
       "scholarshipDescription": "The NUS Global Merit Scholarship offers full tuition and a stipend to outstanding students pursuing undergraduate studies.",
@@ -93,19 +83,17 @@
       "universityName": "ETH Zurich",
       "universityImage": " https://i.ibb.co/X2Y3Nwd/ETH-Zurich.jpg ",
       "scholarshipCategory": "Master's Scholarship",
-      "universityLocation": {
-        "country": "Switzerland",
-        "city": "Zurich"
-      },
+      "country": "Switzerland",
+      "city": "Zurich",
       "applicationDeadline": "2024-07-31",
       "subjectCategory": "Sciences",
-      "applicationFees": "CHF 150",
+      "applicationFees": "$150",
       "rating": 4.7,
       "subjectName": "Physics",
       "scholarshipDescription": "The ETH Zurich Excellence Scholarship provides full tuition coverage and a living stipend for outstanding Master's students.",
       "stipend": "CHF 20,000 per annum",
       "postDate": "2024-02-01",
-      "serviceCharge": "CHF 50"
+      "serviceCharge": "$50"
     }
   ]
   

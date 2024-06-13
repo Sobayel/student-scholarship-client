@@ -5,6 +5,7 @@ import useAuth from "../../hooks/useAuth";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -57,8 +58,10 @@ const SignUp = () => {
             };
 
             const res = await axiosPublic.post('/users', userInfo);
-            console.log(res.data);
-            navigate('/');
+            if (res.data.success) {
+                toast.success('User Successfully Login')
+                }
+            navigate('/')
         } catch (error) {
             console.log(error);
         }

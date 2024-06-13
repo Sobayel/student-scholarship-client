@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import useAuth from "../../hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const navigate = useNavigate()
@@ -49,8 +50,10 @@ const Login = () => {
             }
             axiosPublic.post('/users', userInfo)
             .then(res =>{
-                console.log(res.data);
-                navigate('/');
+                if (res.data.success) {
+                    toast.success('User Successfully Login')
+                    }
+                navigate('/')
             })
         })
     }

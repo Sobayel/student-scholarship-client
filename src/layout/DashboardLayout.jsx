@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { FaHome, FaBookReader } from "react-icons/fa";
+import { FaHome, FaBookReader, FaAd } from "react-icons/fa";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
@@ -63,6 +63,9 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to='/dashboard/manageUsers'><FaHome></FaHome>Manage Users</NavLink>
                             </li>
+                            <li>
+                                <NavLink to='/dashboard/addScholarship'><FaHome></FaHome>Add Scholarship</NavLink>
+                            </li>
                         </>
                     }
                     {
@@ -70,6 +73,9 @@ const Dashboard = () => {
                         <>
                             <li>
                                 <NavLink to='/dashboard/creatorHome'><FaHome></FaHome> Creator Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
                         </>
                     }
@@ -80,7 +86,7 @@ const Dashboard = () => {
                                 <NavLink to='/dashboard/profile'><FaHome></FaHome> My Profile</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/dashboard/review'><FaHome></FaHome> My Review</NavLink>
+                                <NavLink to='/dashboard/review'><FaAd></FaAd> My Review</NavLink>
                             </li>
                         </>
                     }
@@ -109,6 +115,9 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/manageUsers'><FaHome></FaHome>Manage Users</NavLink>
                                     </li>
+                                    <li>
+                                <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
+                            </li>
                                 </>
                             }
                             {
@@ -117,6 +126,9 @@ const Dashboard = () => {
                                     <li>
                                         <NavLink to='/dashboard/creatorHome'><FaHome></FaHome> Creator Home</NavLink>
                                     </li>
+                                    <li>
+                                <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
+                            </li>
                                 </>
                             }
                             {
