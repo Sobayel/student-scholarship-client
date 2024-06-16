@@ -13,7 +13,6 @@ import ApplyScholarshipForm from "../pages/Home/TopScholarship/ApplyScholarshipF
 import DashboardLayout from "../layout/DashboardLayout";
 import MyProfile from "../pages/Dashboard/Common/MyProfile";
 import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
-import StudentReview from "../pages/Home/Home/StudentReview/StudentReview";
 import MyReview from "../pages/Dashboard/UserDashboard/MyReview";
 import AddScholarship from "../pages/Dashboard/ModeratorDashboard/AddScholarship";
 
@@ -41,7 +40,11 @@ export const router = createBrowserRouter([
         {
           path: '/applyScholarshipForm',
           element:<ApplyScholarshipForm></ApplyScholarshipForm>,
-        }
+        },
+        {
+          path:'applyScholarshipForm/:id',
+          element:<ApplyScholarshipForm></ApplyScholarshipForm>
+        },
     ]
     },
     { path: '/login', element: <Login /> },
@@ -67,6 +70,7 @@ export const router = createBrowserRouter([
         path:'addScholarship',
         element:<AddScholarship></AddScholarship>
       },
+      
     ],
   }
   ]);

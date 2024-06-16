@@ -1,21 +1,21 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import toast from "react-hot-toast";
-import Payment from "./Payment";
-import Button from "../../../Shared/Button";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+// import axios from "axios";
 
 
 const ScholarshipDetails = () => {
     const { user } = useAuth()
-    const [isOpen, setIsOpen] = useState(false)
     const { id } = useParams();
     const [startDate, setStartDate] = useState(new Date())
+    const axiosPublic = useAxiosPublic()
 
     const axiosSecure = useAxiosSecure();
     const { data: scholarship = [], isLoading, refetch } = useQuery({
@@ -51,10 +51,25 @@ const ScholarshipDetails = () => {
                 }
             })
     }
+// to={`/applyScholarshipForm/${scholarship._id}`}
 
-    const closeModal = () =>{
-        setIsOpen(false)
-      }
+    const handleApply = () =>{
+        const appliedInfo = {
+            ...scholarship,
+            price:scholarship.applicationFees,
+            currentDate: new Date(),
+            applyUser: {
+                name: user?.displayName,
+                email: user?.email,
+                image: user?.photoURL,
+              },
+        }
+        axiosPublic.post('/applyPayment', appliedInfo)
+        .then(res => {
+          window.location.replace(res.data.url)
+        console.log(res.data)
+        })
+    }
 
     if (isLoading) return <LoadingSpinner />
     return (
@@ -71,7 +86,7 @@ const ScholarshipDetails = () => {
                     <p className="px-2 text-lg font-semibold text-gray-700 dark:text-gray-400">Scholarship Category:  {scholarship.scholarshipCategory}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Subject Name: {scholarship.subjectName}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationDeadline: {scholarship.applicationDeadline}</p>
-                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">UniversityLocation:  {scholarship?.universityLocation?.country},{scholarship?.universityLocation?.city}</p>
+                    <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">UniversityLocation:  {scholarship?.country},{scholarship?.city}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">ApplicationFees: {scholarship.applicationFees}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Post Date: {scholarship.postDate}</p>
                     <p className="px-2 text-lg mt-1 text-gray-700 dark:text-gray-200">Stipend: {scholarship.stipend}</p>
@@ -79,27 +94,11 @@ const ScholarshipDetails = () => {
                 </div>
             </div>
             <div className='p-4'>
-      <Button
-          onClick={() => setIsOpen(true)}
-          label='Apply Scholarship'
-        />
+      
+        <Link onClick={handleApply}><button className="btn btn-primary">
+        Apply Scholarship
+            </button> </Link>
       </div>
-      {/* Modal */}
-      <Payment 
-      isOpen={isOpen}
-      closeModal={closeModal}
-      refetch={refetch}
-      appliedInfo={{
-        ...scholarship,
-        _id:scholarship._id,
-        price:scholarship.applicationFees,
-        normalUser: {
-          name: user?.displayName,
-          email: user?.email,
-          id: user?._id,
-        },
-      }}
-      ></Payment>
             {/* review section */}
             <form onSubmit={handleReview} className="px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">

@@ -7,7 +7,6 @@ const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
-    console.log(user);
     const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider()
     const axiosPublic = useAxiosPublic()
@@ -51,7 +50,6 @@ const AuthProvider = ({children}) => {
             if(res.data.token){
               localStorage.setItem('access-token',res.data.token);
               setLoading(false)
-              console.log(res.data.token)
             }
           })
         }else{

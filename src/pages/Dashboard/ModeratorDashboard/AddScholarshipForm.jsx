@@ -6,9 +6,9 @@ const AddScholarshipForm = ({ handleSubmit, imagePreview, handleImage, imageText
     const [postDate, setPostDate] = useState(new Date());
 
     return (
-        <div className='w-full flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50'>
+        <div className='w-full flex flex-col justify-center mb-5 items-center text-gray-800 rounded-xl'>
             <form onSubmit={handleSubmit}>
-                <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
                     <div className='space-y-1 text-sm'>
                         <label htmlFor='scholarshipName' className='block text-gray-600'>
                             Scholarship Name

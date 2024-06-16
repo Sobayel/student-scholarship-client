@@ -57,8 +57,6 @@ const Dashboard = () => {
                 <ul className="menu p-5">
                     {
                         isAdmin &&
-
-
                         <>
                             <li>
                                 <NavLink to='/dashboard/manageUsers'><FaHome></FaHome>Manage Users</NavLink>
