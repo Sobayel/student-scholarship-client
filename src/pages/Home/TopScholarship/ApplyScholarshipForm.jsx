@@ -80,6 +80,7 @@ const ApplyScholarshipForm = () => {
                 setImagePreview={setImagePreview}
                 imagePreview={imagePreview}
                 handleImage={handleImage}
+                singleItem={singleItem}
                 imageText={imageText}>
        </ApplyForm>
     );

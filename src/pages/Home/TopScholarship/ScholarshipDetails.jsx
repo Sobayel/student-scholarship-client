@@ -56,7 +56,7 @@ const ScholarshipDetails = () => {
     const handleApply = () =>{
         const appliedInfo = {
             ...scholarship,
-            price:scholarship.applicationFees,
+            price:scholarship?.applicationFees,
             currentDate: new Date(),
             applyUser: {
                 name: user?.displayName,
@@ -65,7 +65,7 @@ const ScholarshipDetails = () => {
               },
         }
         axiosPublic.post('/applyPayment', appliedInfo)
-        .then(res => {
+        .then((res) => {
           window.location.replace(res.data.url)
         console.log(res.data)
         })
