@@ -1,14 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link, useParams } from "react-router-dom";
-import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import toast from "react-hot-toast";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
-// import axios from "axios";
 
 
 const ScholarshipDetails = () => {
@@ -18,7 +16,7 @@ const ScholarshipDetails = () => {
     const axiosPublic = useAxiosPublic()
 
     const axiosSecure = useAxiosSecure();
-    const { data: scholarship = [], isLoading, refetch } = useQuery({
+    const { data: scholarship = [] } = useQuery({
         queryKey: ['scholarship'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/scholarship/${id}`);
@@ -53,29 +51,28 @@ const ScholarshipDetails = () => {
     }
 // to={`/applyScholarshipForm/${scholarship._id}`}
 
-    const handleApply = () =>{
-        const appliedInfo = {
-            ...scholarship,
-            price:scholarship?.applicationFees,
-            currentDate: new Date(),
-            applyUser: {
-                name: user?.displayName,
-                email: user?.email,
-                image: user?.photoURL,
-              },
-        }
-        axiosPublic.post('/applyPayment', appliedInfo)
-        .then((res) => {
-          window.location.replace(res.data.url)
-        console.log(res.data)
-        })
-    }
-
-    if (isLoading) return <LoadingSpinner />
+const handleApply = () => {
+    const appliedInfo = {
+      ...scholarship,
+      price: scholarship?.applicationFees,
+      currentDate: new Date(),
+      applyUser: {
+        name: user?.displayName,
+        email: user?.email,
+        image: user?.photoURL,
+      },
+    };
+  
+    axiosPublic.post('/applyPayment', appliedInfo)
+      .then(res => {
+        console.log(res.data);
+          window.location.replace(res.data.GatewayPageURL);
+      })
+  };
+  
     return (
         <div className="max-w-3xl overflow-hidden mb-10 justify-center mx-auto bg-white rounded-lg dark:bg-gray-800">
             <img className="object-cover w-full h-80" src={scholarship.universityImage} alt="Article" />
-
             <div className="p-6">
                 <div>
                     <span className="text-sm font-medium text-blue-600 uppercase dark:text-blue-400">Subject Name:  {scholarship.subjectName}</span>
@@ -94,10 +91,9 @@ const ScholarshipDetails = () => {
                 </div>
             </div>
             <div className='p-4'>
-      
-        <Link onClick={handleApply}><button className="btn btn-primary">
+        <button onClick={handleApply} className="btn btn-primary">
         Apply Scholarship
-            </button> </Link>
+            </button>
       </div>
             {/* review section */}
             <form onSubmit={handleReview} className="px-6">

@@ -1,5 +1,3 @@
-
-
 const ApplyForm = ({ handleApplyScholarshipForm, imagePreview, singleItem, handleImage, imageText }) => {
     return (
         <div className="flex justify-center items-center py-16">
@@ -108,14 +106,14 @@ const ApplyForm = ({ handleApplyScholarshipForm, imagePreview, singleItem, handl
                             htmlFor="scholarshipCategory">
                             Scholarship Category
                         </label>
-                        <input type="text" name="scholarshipCategory" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
+                        <input type="text" name="scholarshipCategory" defaultValue={singleItem?.scholarshipCategory} id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
                     </div>
                     <div>
                         <label className="text-slate-700 font-semibold"
                             htmlFor="subjectCategory">
                             Subject Category
                         </label>
-                        <input type="text" name="subjectCategory" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
+                        <input type="text" name="subjectCategory" defaultValue={singleItem?.subjectCategory} id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
                     </div>
                 </div>
                 <div className="mt-4">

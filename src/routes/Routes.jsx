@@ -15,6 +15,8 @@ import MyProfile from "../pages/Dashboard/Common/MyProfile";
 import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
 import MyReview from "../pages/Dashboard/UserDashboard/MyReview";
 import AddScholarship from "../pages/Dashboard/ModeratorDashboard/AddScholarship";
+import ManageScholarship from "../pages/Dashboard/Common/ManageScholarship";
+import UpdateItem from "../pages/Dashboard/ModeratorDashboard/UpdateItem";
 
 export const router = createBrowserRouter([
     {
@@ -70,6 +72,15 @@ export const router = createBrowserRouter([
         path:'addScholarship',
         element:<AddScholarship></AddScholarship>
       },
+      {
+        path:'manageScholarship',
+        element:<ManageScholarship></ManageScholarship>
+      },
+      {
+        path: 'updateItem/:id',
+        element: <UpdateItem></UpdateItem>,
+        loader: ({params}) => fetch(`http://localhost:9000/scholarship/${params.id}`)
+    },
       
     ],
   }

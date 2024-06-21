@@ -2,10 +2,6 @@
 
 # Student Scholarship
 
-github client link: https://github.com/programming-hero-web-course1/b9a12-client-side-Sobayel
-github server link: https://github.com/programming-hero-web-course1/b9a12-server-side-Sobayel
-live link: https://assignment-ss-e02b6.web.app
-
 1. Assignment Category/variant:
 2. Admin email:mdsobayelhossain@gmail.com
 3. Admin password:1!Aaaa
@@ -29,6 +25,7 @@ live link: https://assignment-ss-e02b6.web.app
 - 404 Page
 - Review
 - Manage Users
+- Manage Scholarship
 - Footer
 
 
@@ -48,6 +45,7 @@ live link: https://assignment-ss-e02b6.web.app
 - date-fns
 - eslint-plugin-react
 - vite
+- tanstack react-query
 - react-date picker
 - axios
 - sweetalert2

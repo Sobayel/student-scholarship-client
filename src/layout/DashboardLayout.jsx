@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { FaHome, FaBookReader, FaAd } from "react-icons/fa";
+import { FaHome, FaBookReader, FaAd, FaHandHolding, FaUser } from "react-icons/fa";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
@@ -59,10 +59,13 @@ const Dashboard = () => {
                         isAdmin &&
                         <>
                             <li>
-                                <NavLink to='/dashboard/manageUsers'><FaHome></FaHome>Manage Users</NavLink>
+                                <NavLink to='/dashboard/manageScholarship'><FaHandHolding></FaHandHolding>Manage Scholarship</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/dashboard/addScholarship'><FaHome></FaHome>Add Scholarship</NavLink>
+                                <NavLink to='/dashboard/manageUsers'><FaUser></FaUser>Manage Users</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
                         </>
                     }
@@ -70,7 +73,7 @@ const Dashboard = () => {
                         isModerator &&
                         <>
                             <li>
-                                <NavLink to='/dashboard/creatorHome'><FaHome></FaHome> Creator Home</NavLink>
+                                <NavLink to='/dashboard/manageScholarship'><FaHandHolding></FaHandHolding>Manage Scholarship</NavLink>
                             </li>
                             <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
@@ -179,7 +182,9 @@ const Dashboard = () => {
                             <Link to='/login'><Button text="Login"></Button></Link>
                     }
                 </div>
+                <div className="flex-1 p-4">
                 <Outlet></Outlet>
+                </div>
             </div>
         </div >
     );

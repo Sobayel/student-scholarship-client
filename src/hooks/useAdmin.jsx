@@ -12,7 +12,7 @@ const useAdmin = () => {
       if (!user?.email) {
         return false;
       }
-      const res = await axios.get(`/users/admin/${user.email}`);
+      const res = await axios.get(`/users/admin/${user?.email}`);
       return res.data?.admin;
     },
     enabled: !!user?.email,
