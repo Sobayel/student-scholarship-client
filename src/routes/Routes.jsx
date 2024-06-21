@@ -39,10 +39,10 @@ export const router = createBrowserRouter([
           element: <AllScholarship></AllScholarship>,
           loader: () => fetch('http://localhost:9000/scholarshipCount')
         },
-        {
-          path: '/applyScholarshipForm',
-          element:<ApplyScholarshipForm></ApplyScholarshipForm>,
-        },
+        // {
+        //   path: '/applyScholarshipForm',
+        //   element:<ApplyScholarshipForm></ApplyScholarshipForm>,
+        // },
         {
           path:'applyScholarshipForm/:id',
           element:<ApplyScholarshipForm></ApplyScholarshipForm>

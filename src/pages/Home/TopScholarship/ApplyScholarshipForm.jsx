@@ -17,14 +17,14 @@ const ApplyScholarshipForm = () => {
     const [imagePreview, setImagePreview] = useState();
     const [imageText, setImageText] = useState('Upload Image');
     
-    const { data: singleItem = [], isLoading } = useQuery({
+    const { data: singleItem = [] } = useQuery({
         queryKey: ['singleItem'],
         queryFn: async () => {
             const res = await axiosSecure.get(`/singleItem/${id}`);
             return res.data;
         }
     })
-    isLoading(false)
+    
     console.log(singleItem)
 
     const { mutateAsync } = useMutation({

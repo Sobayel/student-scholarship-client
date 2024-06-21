@@ -11,6 +11,7 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const ScholarshipDetails = () => {
     const { user } = useAuth()
+    console.log(user)
     const { id } = useParams();
     const [startDate, setStartDate] = useState(new Date())
     const axiosPublic = useAxiosPublic()
@@ -24,6 +25,7 @@ const ScholarshipDetails = () => {
         }
 
     })
+    console.log(scholarship)
 
     const handleReview = event => {
         event.preventDefault();
@@ -55,6 +57,7 @@ const handleApply = () => {
     const appliedInfo = {
       ...scholarship,
       price: scholarship?.applicationFees,
+      id: scholarship?._id,
       currentDate: new Date(),
       applyUser: {
         name: user?.displayName,
@@ -66,7 +69,7 @@ const handleApply = () => {
     axiosPublic.post('/applyPayment', appliedInfo)
       .then(res => {
         console.log(res.data);
-          window.location.replace(res.data.GatewayPageURL);
+          window.location.replace(res.data.url);
       })
   };
   
@@ -94,6 +97,12 @@ const handleApply = () => {
         <button onClick={handleApply} className="btn btn-primary">
         Apply Scholarship
             </button>
+        
+      </div>
+      <div>
+      <Link to={`/applyScholarshipForm/${scholarship._id}`} className="btn btn-primary">
+        Apply Scholarship to
+            </Link>
       </div>
             {/* review section */}
             <form onSubmit={handleReview} className="px-6">

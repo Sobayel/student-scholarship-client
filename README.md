@@ -2,10 +2,10 @@
 
 # Student Scholarship
 
-1. Assignment Category/variant:
-2. Admin email:mdsobayelhossain@gmail.com
+1. Assignment Category/variant: Assignment12_category_0021
+2. Admin email:sobayel@gmail.com
 3. Admin password:1!Aaaa
-4. Moderator email:sohanmia2230@gmail.com
+4. Moderator email:sohan@gamil.com
 5. Moderator password:1!Aaaa
 6. Front-end Live Site Link:
 7. Client Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-client-side-Sobayel
