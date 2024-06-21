@@ -84,10 +84,10 @@ const Dashboard = () => {
                         isUser &&
                         <>
                             <li>
-                                <NavLink to='/dashboard/profile'><FaHome></FaHome> My Profile</NavLink>
+                                <NavLink to='/dashboard/myApplication'><FaHome></FaHome>My Application</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/dashboard/review'><FaAd></FaAd> My Review</NavLink>
+                                <NavLink to='/dashboard/myReview'><FaAd></FaAd> My Review</NavLink>
                             </li>
                         </>
                     }
@@ -114,9 +114,12 @@ const Dashboard = () => {
                                 isAdmin &&
                                 <>
                                     <li>
-                                        <NavLink to='/dashboard/manageUsers'><FaHome></FaHome>Manage Users</NavLink>
-                                    </li>
-                                    <li>
+                                <NavLink to='/dashboard/manageScholarship'><FaHandHolding></FaHandHolding>Manage Scholarship</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageUsers'><FaUser></FaUser>Manage Users</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
                                 </>
@@ -125,9 +128,9 @@ const Dashboard = () => {
                                 isModerator &&
                                 <>
                                     <li>
-                                        <NavLink to='/dashboard/creatorHome'><FaHome></FaHome> Creator Home</NavLink>
-                                    </li>
-                                    <li>
+                                <NavLink to='/dashboard/manageScholarship'><FaHandHolding></FaHandHolding>Manage Scholarship</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
                                 </>
@@ -136,10 +139,10 @@ const Dashboard = () => {
                                 isUser &&
                                 <>
                                     <li>
-                                        <NavLink to='/dashboard/userProfile'><FaHome></FaHome> My Profile</NavLink>
-                                    </li>
-                                    <li>
-                                <NavLink to='/dashboard/review'><FaHome></FaHome> My Review</NavLink>
+                                <NavLink to='/dashboard/myApplication'><FaHome></FaHome>My Application</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/myReview'><FaAd></FaAd> My Review</NavLink>
                             </li>
                                 </>
                             }

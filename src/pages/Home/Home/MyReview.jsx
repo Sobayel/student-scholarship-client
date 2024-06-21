@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "../../../Shared/LoadingSpinner";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import StudentReviewCard from "../../Home/Home/StudentReview/StudentReviewCard";
+import StudentReviewCard from "./StudentReview/StudentReviewCard";
 
 
 const MyReview = () => {

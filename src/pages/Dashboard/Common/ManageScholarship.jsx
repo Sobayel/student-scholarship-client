@@ -74,7 +74,6 @@ const ManageScholarship = () => {
                                 <td>{scholar.degree}</td>
                                 <td>{scholar.applicationFees}</td>
                                 <td>
-                                    {/* Open the modal using document.getElementById('ID').showModal() method */}
                                     <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}>Details</button>
                                     <dialog id="my_modal_2" className="modal">
                                             <div className="max-w-3xl modal-box overflow-hidden mb-10 justify-center mx-auto bg-white rounded-lg dark:bg-gray-800">

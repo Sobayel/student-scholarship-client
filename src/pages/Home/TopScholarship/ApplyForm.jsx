@@ -58,7 +58,7 @@ const ApplyForm = ({ handleApplyScholarshipForm, imagePreview, singleItem, handl
                         </label>
                         <input type="text" name="country" id="" className="block w-full px-4 py-2 mt-2 text-slate-700 rounded-sm bg-white border border-slate-300 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-30 focus:outline-none focus:ring" required />
                     </div>
-                    <div>
+                    <div className="flex-col flex">
                         <label className="font-semibold" htmlFor="">
                             Gender
                         </label>
@@ -69,7 +69,7 @@ const ApplyForm = ({ handleApplyScholarshipForm, imagePreview, singleItem, handl
                             <option value="Others">Others</option>
                         </select>
                     </div>
-                    <div>
+                    <div className="flex-col flex">
                         <label className="font-semibold" htmlFor="">
                         Applying Degree
                         </label>

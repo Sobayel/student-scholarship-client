@@ -13,10 +13,11 @@ import ApplyScholarshipForm from "../pages/Home/TopScholarship/ApplyScholarshipF
 import DashboardLayout from "../layout/DashboardLayout";
 import MyProfile from "../pages/Dashboard/Common/MyProfile";
 import ManageUsers from "../pages/Dashboard/AdminDashboard/ManageUsers";
-import MyReview from "../pages/Dashboard/UserDashboard/MyReview";
+import MyReview from "../pages/Home/Home/MyReview";
 import AddScholarship from "../pages/Dashboard/ModeratorDashboard/AddScholarship";
 import ManageScholarship from "../pages/Dashboard/Common/ManageScholarship";
 import UpdateItem from "../pages/Dashboard/ModeratorDashboard/UpdateItem";
+import MyApplication from "../pages/Dashboard/UserDashboard/MyApplication";
 
 export const router = createBrowserRouter([
     {
@@ -39,10 +40,6 @@ export const router = createBrowserRouter([
           element: <AllScholarship></AllScholarship>,
           loader: () => fetch('http://localhost:9000/scholarshipCount')
         },
-        // {
-        //   path: '/applyScholarshipForm',
-        //   element:<ApplyScholarshipForm></ApplyScholarshipForm>,
-        // },
         {
           path:'applyScholarshipForm/:id',
           element:<ApplyScholarshipForm></ApplyScholarshipForm>
@@ -59,6 +56,11 @@ export const router = createBrowserRouter([
         path:'myProfile',
         element:<MyProfile></MyProfile>
       },
+      {
+        path:'myApplication',
+        element:<MyApplication></MyApplication>
+      },
+
       {
         path:'review',
         element:<MyReview></MyReview>
@@ -81,7 +83,6 @@ export const router = createBrowserRouter([
         element: <UpdateItem></UpdateItem>,
         loader: ({params}) => fetch(`http://localhost:9000/scholarship/${params.id}`)
     },
-      
     ],
   }
   ]);

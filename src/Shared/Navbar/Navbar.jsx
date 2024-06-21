@@ -5,15 +5,12 @@ import logo from "../../assets/logo.png"
 import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from "react";
 import avatarImg from '../../assets/home/placeholder.jpg'
-import useAdmin from "../../hooks/useAdmin";
-import useUser from "../../hooks/useUser";
 
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false)
-  const [isUser] = useUser()
-  const [isAdmin] = useAdmin()
+
 
 
   const navLinks = <>
@@ -23,24 +20,6 @@ const Navbar = () => {
     <li>
       <Link to='/allScholarship'>All Scholarship</Link>
     </li>
-
-    {
-      isUser &&
-      <>
-        <li>
-          <Link to="/userDashboard">User Dashboard</Link>
-        </li>
-      </>
-    }
-
-    {
-      isAdmin &&
-      <>
-        <li>
-          <Link to="/adminDashboard">Admin Dashboard</Link>
-        </li>
-      </>
-    }
   </>
   return (
     <div className="navbar max-w-screen-xl fixed z-10 bg-opacity-20 text-white bg-black lg:p-4">

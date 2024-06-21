@@ -99,11 +99,6 @@ const handleApply = () => {
             </button>
         
       </div>
-      <div>
-      <Link to={`/applyScholarshipForm/${scholarship._id}`} className="btn btn-primary">
-        Apply Scholarship to
-            </Link>
-      </div>
             {/* review section */}
             <form onSubmit={handleReview} className="px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
