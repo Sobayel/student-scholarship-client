@@ -34,7 +34,7 @@ const ScholarshipDetails = () => {
         const rating = form.rating.value;
         const comment = form.comment.value;
         const reviewForm = { name, rating, date, comment, image };
-        fetch('http://localhost:9000/review', {
+        fetch('https://student-scholarship-server.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

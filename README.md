@@ -7,7 +7,7 @@
 3. Admin password:1!Aaaa
 4. Moderator email:sohan@gamil.com
 5. Moderator password:1!Aaaa
-6. Front-end Live Site Link:
+6. Front-end Live Site Link:https://student-scholarship-114bd.web.app
 7. Client Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-client-side-Sobayel
 8. Server Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-server-side-Sobayel
 

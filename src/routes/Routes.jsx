@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
         {
           path: '/allScholarship',
           element: <AllScholarship></AllScholarship>,
-          loader: () => fetch('http://localhost:9000/scholarshipCount')
+          loader: () => fetch('https://student-scholarship-server.vercel.app/scholarshipCount')
         },
         {
           path:'applyScholarshipForm/:id',
@@ -76,15 +76,16 @@ export const router = createBrowserRouter([
       {
         path: 'updateReview/:id',
         element: <UpdateReview></UpdateReview>,
-        loader: ({params}) => fetch(`http://localhost:9000/userReviews/${params.id}`)
+        loader: ({params}) => fetch(`https://student-scholarship-server.vercel.app/userReviews/${params.id}`)
     },
 
       
-      // admin and moderator
+      // admin
       {
         path:'manageUsers',
         element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
       },
+      // admin and moderator
       {
         path:'addScholarship',
         element:<AddScholarship></AddScholarship>
@@ -96,7 +97,7 @@ export const router = createBrowserRouter([
       {
         path: 'updateItem/:id',
         element: <UpdateItem></UpdateItem>,
-        loader: ({params}) => fetch(`http://localhost:9000/scholarship/${params.id}`)
+        loader: ({params}) => fetch(`https://student-scholarship-server.vercel.app/scholarship/${params.id}`)
     },
     {
       path:'manageApplication',
