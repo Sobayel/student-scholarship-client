@@ -4,9 +4,11 @@ import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import ManageDetails from "./ManageDetails";
+import { useState } from "react";
 
 
 const ManageScholarship = () => {
+    const [scholarship, setScholarShip] = useState('')
     const axiosSecure = useAxiosSecure()
     const { data: manage = [], refetch} = useQuery({
         queryKey: ['users'],
@@ -43,6 +45,13 @@ const ManageScholarship = () => {
           }
         });
       };
+
+      const handleModal = (scholar) =>{
+        console.log(scholar)
+        setScholarShip(scholar)
+        document.getElementById('my_modal_2').showModal()
+      }
+
     return (
         <div>
             <div className="flex justify-evenly my-4 font-bold">
@@ -75,9 +84,9 @@ const ManageScholarship = () => {
                                 <td>{scholar.degree}</td>
                                 <td>{scholar.applicationFees}</td>
                                 <td>
-                                    <button className="btn" onClick={() => document.getElementById('my_modal_2').showModal()}>Details</button>
+                                    <button className="btn" onClick={()=>handleModal(scholar)}>Details</button>
                                     <ManageDetails
-                                    scholar={scholar}
+                                    scholar={scholarship}
                                     ></ManageDetails>
                                 </td>
                                 <td>

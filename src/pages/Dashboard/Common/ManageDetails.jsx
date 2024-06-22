@@ -1,9 +1,5 @@
-
-
 const ManageDetails = ({ scholar }) => {
-    console.log(scholar)
     return (
-
         <dialog id="my_modal_2" className="modal">
             <div className="max-w-3xl modal-box overflow-hidden mb-10 justify-center mx-auto bg-white rounded-lg dark:bg-gray-800">
                 <img className="object-cover w-full h-72" src={scholar.universityImage} alt="Article" />
