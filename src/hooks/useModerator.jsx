@@ -10,6 +10,7 @@ const useModerator = () => {
    
     const { data: isModerator, isPending: isModeratorLoading } = useQuery({
         queryKey: [user?.email, 'isModerator'],
+        enabled: !!user?.email,
         queryFn: async () => {
             const res = await axios.get(`/users/moderator/${user?.email}`)
             console.log(res.data)

@@ -17,6 +17,7 @@
 - Moderator Dashboard
 - Users Dashboard
 - All Scholarship
+- Top Scholarship
 - My Profile
 - Nav ber 
 - Banner
@@ -25,6 +26,9 @@
 - 404 Page
 - Review
 - Manage Users
+- All Review
+- All Application
+- Add Scholarship
 - Manage Scholarship
 - Footer
 
@@ -51,5 +55,10 @@
 - sweetalert2
 - react-hook-form
 - react-toastify
+- @headlessui/react
+- react-helmet-async
+- react-tooltip
+- react-spinners
+- react-rating-stars-component
 
 

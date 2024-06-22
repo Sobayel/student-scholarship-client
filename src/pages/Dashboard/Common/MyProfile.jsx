@@ -1,10 +1,20 @@
+import { useQuery } from '@tanstack/react-query'
 import LoadingSpinner from '../../../Shared/LoadingSpinner'
 import useAuth from '../../../hooks/useAuth'
+import useAxiosPublic from '../../../hooks/useAxiosPublic'
 
 
 const MyProfile = () => {
   const { user, loading } = useAuth()
-
+  const axiosSecure = useAxiosPublic()
+  const { data: users = [], } = useQuery({
+      queryKey: ['users'],
+      queryFn: async () => {
+          const res = await axiosSecure.get(`/users/${user.email}`);
+          return res.data;
+      }
+  })
+  console.log(users)
 
   if(loading) return <LoadingSpinner></LoadingSpinner>
   return (
@@ -23,6 +33,8 @@ const MyProfile = () => {
               className='mx-auto object-cover rounded-full h-24 w-24  border-2 border-white '
             />
           </a>
+          <p className='text-md font-semibold text-center'>Role:{users?.role}</p>
+          
           <div className='w-full p-2 mt-4 rounded-lg'>
             <div className='flex flex-wrap items-center justify-between text-sm text-gray-600 '>
               <p className='flex flex-col'>
