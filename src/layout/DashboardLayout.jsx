@@ -1,5 +1,5 @@
 import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
-import { FaHome, FaBookReader, FaAd, FaHandHolding, FaUser } from "react-icons/fa";
+import { FaHome, FaBookReader, FaAd, FaHandHolding, FaUser, FaAppStore, FaStreetView } from "react-icons/fa";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
@@ -11,6 +11,7 @@ import useModerator from "../hooks/useModerator";
 import Button from "../Shared/Button";
 import logo from "../assets/logo.png"
 import LoadingSpinner from "../Shared/LoadingSpinner";
+import { FaFileWaveform } from "react-icons/fa6";
 
 
 const Dashboard = () => {
@@ -67,6 +68,12 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
+                            <li>
+                                <NavLink to='/dashboard/manageApplication'><FaFileWaveform></FaFileWaveform>Manage Application</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageReview'><FaStreetView></FaStreetView>Manage Review</NavLink>
+                            </li>
                         </>
                     }
                     {
@@ -78,16 +85,22 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
+                            <li>
+                                <NavLink to='/dashboard/manageApplication'><FaFileWaveform></FaFileWaveform>Manage Application</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageReview'><FaStreetView></FaStreetView>Manage Review</NavLink>
+                            </li>
                         </>
                     }
                     {
                         isUser &&
                         <>
                             <li>
-                                <NavLink to='/dashboard/myApplication'><FaHome></FaHome>My Application</NavLink>
+                                <NavLink to='/dashboard/myApplication'><FaFileWaveform></FaFileWaveform>My Application</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/dashboard/myReview'><FaAd></FaAd> My Review</NavLink>
+                                <NavLink to='/dashboard/userReview'><FaAd></FaAd> My Review</NavLink>
                             </li>
                         </>
                     }
@@ -122,6 +135,12 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
+                            <li>
+                                <NavLink to='/dashboard/manageApplication'><FaFileWaveform></FaFileWaveform>Manage Application</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageReview'><FaStreetView></FaStreetView>Manage Review</NavLink>
+                            </li>
                                 </>
                             }
                             {
@@ -133,16 +152,22 @@ const Dashboard = () => {
                             <li>
                                 <NavLink to='/dashboard/addScholarship'><FaAd></FaAd>Add Scholarship</NavLink>
                             </li>
+                            <li>
+                                <NavLink to='/dashboard/manageApplication'><FaFileWaveform></FaFileWaveform>Manage Application</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/dashboard/manageReview'><FaStreetView></FaStreetView>Manage Review</NavLink>
+                            </li>
                                 </>
                             }
                             {
                                 isUser &&
                                 <>
                                     <li>
-                                <NavLink to='/dashboard/myApplication'><FaHome></FaHome>My Application</NavLink>
+                                <NavLink to='/dashboard/myApplication'><FaFileWaveform></FaFileWaveform>My Application</NavLink>
                             </li>
                             <li>
-                                <NavLink to='/dashboard/myReview'><FaAd></FaAd> My Review</NavLink>
+                                <NavLink to='/dashboard/userReview'><FaAd></FaAd> My Review</NavLink>
                             </li>
                                 </>
                             }

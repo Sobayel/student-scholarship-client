@@ -18,6 +18,11 @@ import AddScholarship from "../pages/Dashboard/ModeratorDashboard/AddScholarship
 import ManageScholarship from "../pages/Dashboard/Common/ManageScholarship";
 import UpdateItem from "../pages/Dashboard/ModeratorDashboard/UpdateItem";
 import MyApplication from "../pages/Dashboard/UserDashboard/MyApplication";
+import UserReview from "../pages/Dashboard/UserDashboard/UserReview";
+import UpdateReview from "../pages/Dashboard/UserDashboard/UpdateReview";
+import ManageApplication from "../pages/Dashboard/Common/ManageApplication";
+import ManageReview from "../pages/Dashboard/Common/ManageReview";
+import AdminRoute from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -44,6 +49,10 @@ export const router = createBrowserRouter([
           path:'applyScholarshipForm/:id',
           element:<ApplyScholarshipForm></ApplyScholarshipForm>
         },
+        {
+          path:'review',
+          element:<MyReview></MyReview>
+        },
     ]
     },
     { path: '/login', element: <Login /> },
@@ -60,15 +69,21 @@ export const router = createBrowserRouter([
         path:'myApplication',
         element:<MyApplication></MyApplication>
       },
-
       {
-        path:'review',
-        element:<MyReview></MyReview>
+        path:'userReview',
+        element:<UserReview></UserReview>
       },
-      // admin
+      {
+        path: 'updateReview/:id',
+        element: <UpdateReview></UpdateReview>,
+        loader: ({params}) => fetch(`http://localhost:9000/userReviews/${params.id}`)
+    },
+
+      
+      // admin and moderator
       {
         path:'manageUsers',
-        element:<ManageUsers></ManageUsers>
+        element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>
       },
       {
         path:'addScholarship',
@@ -82,6 +97,14 @@ export const router = createBrowserRouter([
         path: 'updateItem/:id',
         element: <UpdateItem></UpdateItem>,
         loader: ({params}) => fetch(`http://localhost:9000/scholarship/${params.id}`)
+    },
+    {
+      path:'manageApplication',
+      element:<ManageApplication></ManageApplication>
+    },
+    {
+      path:'manageReview',
+      element:<ManageReview></ManageReview>
     },
     ],
   }
