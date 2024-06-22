@@ -13,10 +13,8 @@ const UpdateReview = () => {
       } = useForm();
     const axiosSecure = useAxiosSecure()
     const scholar = useLoaderData();
-    console.log(scholar)
        // Update the review item
        const onSubmit = async (data) => {
-        console.log("form data", data);
     
         // Prepare review item data
         const reviewItem = {
@@ -26,7 +24,6 @@ const UpdateReview = () => {
     
         // Update the scholar item
         const reviewRes = await axiosSecure.put(`/userReviews/${scholar._id}`, reviewItem);
-        console.log(reviewRes.data);
     
         if (reviewRes.data.modifiedCount > 0) {
           // Show success popup

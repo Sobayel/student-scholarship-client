@@ -14,7 +14,6 @@ const MyProfile = () => {
           return res.data;
       }
   })
-  console.log(users)
 
   if(loading) return <LoadingSpinner></LoadingSpinner>
   return (

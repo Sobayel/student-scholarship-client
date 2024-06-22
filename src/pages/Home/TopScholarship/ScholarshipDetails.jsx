@@ -11,7 +11,6 @@ import useAxiosPublic from "../../../hooks/useAxiosPublic";
 
 const ScholarshipDetails = () => {
     const { user } = useAuth()
-    console.log(user)
     const { id } = useParams();
     const [startDate, setStartDate] = useState(new Date())
     const axiosPublic = useAxiosPublic()
@@ -25,7 +24,6 @@ const ScholarshipDetails = () => {
         }
 
     })
-    console.log(scholarship)
 
     const handleReview = event => {
         event.preventDefault();
@@ -36,7 +34,6 @@ const ScholarshipDetails = () => {
         const rating = form.rating.value;
         const comment = form.comment.value;
         const reviewForm = { name, rating, date, comment, image };
-        console.log(reviewForm)
         fetch('http://localhost:9000/review', {
             method: 'POST',
             headers: {
@@ -68,7 +65,6 @@ const handleApply = () => {
   
     axiosPublic.post('/applyPayment', appliedInfo)
       .then(res => {
-        console.log(res.data);
           window.location.replace(res.data.url);
       })
   };

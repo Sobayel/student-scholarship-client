@@ -31,7 +31,6 @@ const Dashboard = () => {
 
 
     const handleToggle = (e) => {
-        console.log(e.target.value);
         if (e.target.checked) {
             setTheme('dim')
         } else {

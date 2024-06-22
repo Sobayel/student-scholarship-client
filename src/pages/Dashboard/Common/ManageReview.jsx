@@ -27,7 +27,6 @@ const ManageReview = () => {
             confirmButtonText: "Yes, delete it!",
         }).then(async (result) => {
             if (result.isConfirmed) {
-                console.log("Sending delete request for item ID:", scholar._id);
                 const res = await axiosSecure.delete(`/userReviews/${scholar._id}`);
                 if (res.data.deletedCount > 0) {
                     // refetch

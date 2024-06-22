@@ -42,7 +42,6 @@ const SignUp = () => {
             }
         } catch (error) {
             setRegisterError(error.message);
-            console.log(error);
         }
     };
 

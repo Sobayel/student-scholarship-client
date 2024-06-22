@@ -16,11 +16,9 @@ const ManageUsers = () => {
 
 
     const handleMake = async (user, role) => {
-        console.log(user)
         try {
             axiosSecure.patch(`/users/${user._id}`, { role })
                 .then(res => {
-                    console.log(res.data)
                     if (res.data.modifiedCount > 0) {
                         refetch()
                         Swal.fire({

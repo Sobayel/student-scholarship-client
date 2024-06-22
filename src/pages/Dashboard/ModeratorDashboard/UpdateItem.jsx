@@ -16,7 +16,6 @@ const UpdateItem = () => {
     const scholar = useLoaderData();
        // Update the scholar item
        const onSubmit = async (data) => {
-        console.log("form data", data);
     
         // Prepare scholar item data
         const scholarshipItem = {
@@ -29,7 +28,6 @@ const UpdateItem = () => {
     
         // Update the scholar item
         const scholarRes = await axiosSecure.put(`/scholarship/${scholar._id}`, scholarshipItem);
-        console.log(scholarRes.data);
     
         if (scholarRes.data.modifiedCount > 0) {
           // Show success popup
