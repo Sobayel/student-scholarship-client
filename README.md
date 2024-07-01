@@ -15,6 +15,9 @@
 - Top Scholarship:The top ranking universities are shown in the top scholarship features.
 - All Scholarship:List of all category universities is shown in All Scholarships.
 - Manage Scholarship: Admin and Moderator can handle all scholarships.
+## Project Overview
+- Our Scholarship Management System enables students to find and apply for scholarships, featuring roles for users, moderators, and admins with secure authentication, responsive design, and comprehensive dashboards for efficient management.
+- Problem this Project payment site and solve this Google.
 
 ## Locally Run System
 - git clone
