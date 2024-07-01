@@ -11,6 +11,16 @@
 7. Client Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-client-side-Sobayel
 8. Server Side Github Repository Link:https://github.com/programming-hero-web-course1/b9a12-server-side-Sobayel
 
+## Three Best Features
+- Top Scholarship:The top ranking universities are shown in the top scholarship features.
+- All Scholarship:List of all category universities is shown in All Scholarships.
+- Manage Scholarship: Admin and Moderator can handle all scholarships.
+
+## Locally Run System
+- git clone
+- npm i
+- npm run dev
+
 ## Website Page Name:
 - Home
 - Admin Dashboard
